@@ -9,7 +9,7 @@ countEvenOdd <- function(x) {
       else 
         odd <- odd + 1
     }
-    return(list(even, odd))
+    return(list(even = even, odd = odd))
   }else return(NULL)
 }
 
@@ -65,7 +65,7 @@ mySum <- function(x){
       evensum <- evensum + x[i]
     else
       oddsum <- oddsum + x[i]}
-  return(list(evensum, oddsum))
+  return(list(evenSum = evensum, oddSum = oddsum))
   }
 
 mySum(c(2,2,3,4,5))
@@ -82,6 +82,7 @@ myExpr <- function(x){
 
 myExpr(mean)
 myExpr(3)
+myExpr(base::sum)
 
 # 문제6
 

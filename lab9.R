@@ -40,7 +40,7 @@ key <- enc2utf8(key) # UTF-8 로 변환
 result <- search_tweets(key, n=100, token = twitter_token)
 str(result)
 result$retweet_text
-content <- result$retweet_text
+content <- unique(result$retweet_text)
 content <- gsub("[[:lower:][:upper:][:punct:][:cntrl:]]", "", content)
 content <- gsub("<U+.+>", "", content)
 content <- content[complete.cases(content)]

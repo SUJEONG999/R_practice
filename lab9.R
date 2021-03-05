@@ -43,7 +43,7 @@ result$retweet_text
 content <- unique(result$retweet_text)
 content <- gsub("[[:lower:][:upper:][:punct:][:cntrl:]]", "", content)
 content <- gsub("<U+.+>", "", content)
-content <- content[complete.cases(content)]
+content <- content[complete.cases(content)]  # [!is.na(content)] : 써도 됨.
 content
 write(content, file="C:/jsj/Rexam/output/twitter.txt")
 
@@ -68,6 +68,12 @@ df <- df[c("busRouteId","length","stStationNm", "edStationNm", "term")  ]
 names(df) <- c("노선ID", "노선길이", "기점", "종점", "배차간격")
 View(df)
 str(df)
+
+cat("노선ID :", df$노선ID, "\n")
+cat("노선길이 :", df$노선길이, "\n")
+cat("기점 :", df$기점, "\n")
+cat("종점 :", df$종점, "\n")
+cat("배차간격 :", df$배차간격, "\n")
 
 # [ OPEN API 실습 4 ] 
 # 네이버 뉴스 연동  
